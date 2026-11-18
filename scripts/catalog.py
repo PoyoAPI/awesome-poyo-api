@@ -18,7 +18,7 @@ from pathlib import Path
 
 ORG = "PoyoAPI"
 STUDIO_URL = "https://github.com/coolhackboy/open-generative-studio"
-VERIFIED_ON = "2026-11-17"
+VERIFIED_ON = "2026-11-18"
 CREDIT_USD = Decimal("0.005")  # 1 credit = $0.005 (PoYo pricing pages and repo READMEs)
 
 # ---------------------------------------------------------------------------
@@ -80,6 +80,9 @@ MODEL_REPOS = [
     dict(old="grok-imagine-image-quality-api", new="Grok-Imagine-Image-Quality-API", entries=["grok-imagine-image-quality"], cat="Image"),
     # --- Chat
     dict(old=None, new="Gemini-4-Carbon-API", entries=["gemini-4-carbon"], cat="Chat", py=True, rank=15),
+    dict(old=None, new="GPT-6.2-API", entries=["gpt-6-2-astra", "gpt-6-2-sol"], cat="Chat", py=True, rank=16,
+         blurb="OpenAI's GPT-6.2 Astra (frontier) and GPT-6.2 Sol (efficient) through Chat Completions and Responses, "
+               "with streaming, reasoning effort, and OpenAI SDK examples."),
     dict(old="gpt-5-6-api", new="GPT-5.6-API", entries=["gpt-5-6"], cat="Chat"),
     dict(old="claude-opus-5-api", new="Claude-Opus-5-API", entries=["claude-opus-5"], cat="Chat"),
     dict(old="kimi-k3-api", new="Kimi-K3-API", entries=["kimi-k3"], cat="Chat"),
@@ -108,7 +111,7 @@ NEWER_SIBLING = {
     "claude-4-5-api": "Claude Opus 5.5 / Sonnet 5.5 / Haiku 5.5",
     "claude-opus-4-8-api": "Claude Opus 5 / Opus 5.5",
     "claude-sonnet-5-api": "Claude Sonnet 5.5",
-    "gpt-5-5-api": "GPT-5.6 / GPT-6 family",
+    "gpt-5-5-api": "GPT-6.2 Astra / Sol",
     "deepseek-v4-api": "DeepSeek V4.1 Flash (deepseek-flash)",
     "kling-3-api": "Kling 4.0",
     "kling-3-0-turbo-api": "Kling 4.0 Flash",
@@ -262,6 +265,7 @@ def display_name(models: dict, repo: dict) -> str:
         "Nano-Banana-2-API": "Nano Banana 2 (legacy ids)",
         "MiniMax-H3-API": "MiniMax H3 (Hailuo 03)",
         "DeepSeek-V4-API": "DeepSeek V4",
+        "GPT-6.2-API": "GPT-6.2 Astra / Sol",
         "Grok-Imagine-Image-API": "Grok Imagine Image",
         "Meshy-6-API": "Meshy 6",
         "FLUX-3-Video-API": "FLUX 3 Video",

@@ -1,12 +1,12 @@
 # Awesome PoYo API
 
-[![PoYo](https://img.shields.io/badge/PoYo-models-84cc16)](https://poyo.ai/models?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) [![Docs](https://img.shields.io/badge/API-docs-22d3ee)](https://docs.poyo.ai?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) [![Repositories](https://img.shields.io/badge/example%20repos-53-f97316)](#video)
+[![PoYo](https://img.shields.io/badge/PoYo-models-84cc16)](https://poyo.ai/models?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) [![Docs](https://img.shields.io/badge/API-docs-22d3ee)](https://docs.poyo.ai?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) [![Repositories](https://img.shields.io/badge/example%20repos-54-f97316)](#video)
 
 A curated index of open-source examples for the [PoYo](https://poyo.ai?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) AI API: one repository per model with cURL, Node.js, and often Python examples, plus prompt libraries, developer tools, and starter apps. One API key covers video, image, chat, music, speech, and 3D models.
 
 Each entry lists the cheapest headline price from PoYo's live model catalog. Prices are in USD (1 credit = $0.005) and can change, so confirm on the model page before a production rollout.
 
-Last generated from PoYo's model catalog on **2026-11-17**.
+Last generated from PoYo's model catalog on **2026-11-18**.
 
 ## Contents
 
@@ -72,6 +72,7 @@ Last generated from PoYo's model catalog on **2026-11-17**.
 | Model | Repository | What it does | Price from | Links |
 | --- | --- | --- | --- | --- |
 | **Gemini 4 Carbon** **New** | [Gemini-4-Carbon-API](https://github.com/PoyoAPI/Gemini-4-Carbon-API) | Google's strongest Gemini 4 reasoning model for long-horizon agentic coding, knowledge work, science, and cyber defense with 1M context and 64K output at $1.60 input and $8.00... | $1.60 per 1M input tokens | [Model page](https://poyo.ai/models/gemini-4-carbon?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) · [Docs](https://docs.poyo.ai/api-manual/chat-series/gemini-native-format?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) |
+| **GPT-6.2 Astra / Sol** **New** | [GPT-6.2-API](https://github.com/PoyoAPI/GPT-6.2-API) | OpenAI's GPT-6.2 Astra (frontier) and GPT-6.2 Sol (efficient) through Chat Completions and Responses, with streaming, reasoning effort, and OpenAI SDK examples. | $1.60 per 1M input tokens | [Model page](https://poyo.ai/models/gpt-6-2-astra?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) · [Docs](https://docs.poyo.ai/api-manual/chat-series/openai?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) |
 | **Claude 4.5** | [Claude-4.5-API](https://github.com/PoyoAPI/Claude-4.5-API) | Anthropic's Claude 4.5 series model — Opus, Sonnet & Haiku | $0.80 per 1M input tokens | [Model page](https://poyo.ai/models/claude-4-5-api?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) · [Docs](https://docs.poyo.ai/api-manual/chat-series/claude-messages?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) |
 | **Claude Opus 4.8** | [Claude-Opus-4.8-API](https://github.com/PoyoAPI/Claude-Opus-4.8-API) | Claude Opus 4.8 supports long-context chat, agentic coding, professional reasoning, high-output workflows, 1M context, and up to 128K output. | $4.00 per 1M input tokens | [Model page](https://poyo.ai/models/claude-opus-4-8?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) · [Docs](https://docs.poyo.ai/api-manual/chat-series/claude-messages?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) |
 | **Claude Opus 5** | [Claude-Opus-5-API](https://github.com/PoyoAPI/Claude-Opus-5-API) | Anthropic's flagship agentic model for advanced coding, long-horizon execution, computer use, deep research, and professional knowledge work. | $2.00 per 1M input tokens | [Model page](https://poyo.ai/models/claude-opus-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) · [Docs](https://docs.poyo.ai/api-manual/chat-series/anthropic?utm_source=github&utm_medium=readme&utm_campaign=awesome-poyo-api) |
