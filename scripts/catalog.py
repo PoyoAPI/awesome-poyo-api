@@ -12,13 +12,15 @@ from __future__ import annotations
 
 import json
 import re
+import os
+import sys
 import subprocess
 from decimal import Decimal
 from pathlib import Path
 
 ORG = "PoyoAPI"
 STUDIO_URL = "https://github.com/coolhackboy/open-generative-studio"
-VERIFIED_ON = "2026-11-18"
+VERIFIED_ON = "2026-11-20"
 CREDIT_USD = Decimal("0.005")  # 1 credit = $0.005 (PoYo pricing pages and repo READMEs)
 
 # ---------------------------------------------------------------------------
@@ -41,6 +43,9 @@ MODEL_REPOS = [
     dict(old="veo-3-1-official-api", new="Veo-3.1-API", entries=["veo-3-1-official"], cat="Video", rank=8),
     dict(old="kling-3-api", new="Kling-3.0-API", entries=["kling-3-api"], cat="Video", rank=11),
     dict(old="minimax-h3-api", new="MiniMax-H3-API", entries=["minimax-h3"], cat="Video", rank=13),
+    dict(old=None, new="HeyGen-Avatar-6-API", entries=["heygen-avatar-6"], cat="Video", py=True, rank=17,
+         blurb="HeyGen Avatar 6 and Avatar 6 Turbo lip-synced talking videos at 1080p or 2K from a photo, an animated "
+               "character video, or one of 1,248 HeyGen public avatars, driven by audio or text."),
     dict(old="kling-3-0-turbo-api", new="Kling-3.0-Turbo-API", entries=["kling-3-0-turbo"], cat="Video"),
     dict(old="kling-o3-api", new="Kling-O3-API", entries=["kling-o3-api"], cat="Video"),
     dict(old="kling-avatar-2-0-api", new="Kling-Avatar-2.0-API", entries=["kling-avatar-2-0"], cat="Video"),
@@ -67,6 +72,15 @@ MODEL_REPOS = [
               "to the current ids before renaming, or searchers for 'Nano Banana 2 API' land on legacy ids."),
     dict(old=None, new="Seedream-5.5-API", entries=["seedream-5-5"], cat="Image", py=True, rank=12),
     dict(old=None, new="MiniMax-H3-Image-API", entries=["minimax-h3-image"], cat="Image", py=True, rank=14),
+    dict(old=None, new="Kling-Image-4.0-API", entries=["kling-4-0-image"], cat="Image", py=True, rank=18,
+         blurb="Kling AI's image model for native 8K text-to-image, editing with up to 10 references and multi-angle "
+               "elements, image sets of up to 10, and long webpage or ecommerce page designs."),
+    dict(old=None, new="MAI-Image-2.7-API", entries=["mai-image-2-7"], cat="Image", py=True, rank=19,
+         blurb="Microsoft's MAI Image 2.7 and MAI Image 2.7 Flash for text-to-image and editing with up to 5 reference "
+               "images, transparent backgrounds, and custom sizes up to 4,194,304 pixels."),
+    dict(old=None, new="Ideogram-4.6-API", entries=["ideogram-4-6"], cat="Image", py=True, rank=20,
+         blurb="Ideogram's image model for accurate on-image text, four quality levels, custom sizes up to 4096 pixels "
+               "per side, transparent backgrounds, and editing with masks, reference images, and high-precision edits."),
     dict(old="seedream-5-0-pro-api", new="Seedream-5.0-Pro-API", entries=["seedream-5-0-pro"], cat="Image"),
     dict(old="seedream-5-0-lite-api", new="Seedream-5.0-Lite-API", entries=["seedream-5-0-lite-api"], cat="Image"),
     dict(old="seedream-4-5-api", new="Seedream-4.5-API", entries=["seedream-4-5-api"], cat="Image"),
@@ -157,6 +171,10 @@ def load_models(path: str | None = None) -> dict:
     if path:
         text = Path(path).read_text(encoding="utf-8")
     else:
+        env = dict(os.environ, GCM_INTERACTIVE="never", GIT_TERMINAL_PROMPT="0")
+        if subprocess.run(["git", "-C", "C:/code/poyoapi", "fetch", "-q", "origin", "main"],
+                          capture_output=True, env=env).returncode != 0:
+            print("WARNING: git fetch failed; using the last fetched origin/main", file=sys.stderr)
         text = subprocess.run(
             ["git", "-C", "C:/code/poyoapi", "show", "origin/main:data/models.json"],
             check=True, capture_output=True,
